@@ -1,20 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package proyectofinal;
+package proyectofinal.Vista;
 
-/**
- *
- * @author carlospalominovidal
- */
-public class ProyectoFinal {
+import java.io.PrintWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 
-    /**
-     * @param args the command line arguments
-     */
+public class TXT {
+
     public static void main(String[] args) {
-        // TODO code application logic here
-    }
+        
+try (PrintWriter pw = new PrintWriter(new FileWriter("reporte_orden.txt"))) {
+
+    pw.println("====== REPORTE DE PRUEBA ======");
+    pw.println("ID ORDEN: 1001");
+    pw.println("PRODUCTO: Audífonos");
+    pw.println("CANTIDAD: 4");
+    pw.println("IMPORTE: S/ 150.00");
+    pw.println("===============================");
     
+} catch (IOException e) {
+    System.out.println("Error al escribir archivo: " + e.getMessage());
 }
+
+        }
+    }
